@@ -20,7 +20,7 @@ sudo mv /etc/squid/squid.conf /etc/squid/squid.conf.backup
 git clone https://github.com/rhythmcreative/squid.git
 
 # Entramos al archivo y movemos el squid
-cd squid && mv squid.conf /etc/squid/squid.conf
+cd squid && sudo mv squid.conf /etc/squid/squid.conf
 
 cat /etc/squid/squid.conf
 
@@ -93,11 +93,11 @@ export http_proxy="http://alumno:1234@127.0.0.1:3128"
 ```
 ## Para hacer comprobacion de que la pagina se ha bloqueado
 ```
-curl -I https://www.facebook.com
+curl -x http://alumno:1234@127.0.0.1:3128 -I https://www.facebook.com
 ```
 Esto deberia de dar forbiden
 ```
-curl -I https://www.wikipedia.com
+curl -x http://alumno:1234@127.0.0.1:3128 -I https://www.wikipedia.com
 ```
 Y esta si que deberia funcionar sin problemas
 

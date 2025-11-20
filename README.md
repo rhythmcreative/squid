@@ -1,10 +1,6 @@
-# 🚀 Presentación: Configuración de Proxy Squid en Ubuntu
+#Presentación: Configuración de Proxy Squid en Ubuntu
 
-Este repositorio contiene la configuración clave para una presentación rápida y efectiva sobre cómo configurar un proxy Squid en Ubuntu, cubriendo instalación, configuración básica, caché, autenticación y reglas de acceso (ACLs).
-
-## Fase 1: Preparación Técnica (¡ANTES de la presentación!)
-
-Asegúrate de tener acceso `sudo` y conexión a internet.
+Este repositorio cómo configurar un proxy Squid en Ubuntu, cubriendo instalación, configuración básica, caché, autenticación y reglas de acceso (ACLs).
 
 ### 1. Instalación y Copia de Seguridad de Squid
 
@@ -12,7 +8,7 @@ Instalaremos Squid y haremos una copia de seguridad del archivo de configuració
 
 ```bash
 sudo apt update
-sudo apt install squid apache2-utils -y
+sudo apt install squid apache2-utils git -y
 
 # Detenemos el servicio para configurar
 sudo systemctl stop squid
@@ -20,8 +16,14 @@ sudo systemctl stop squid
 # Hacemos backup del original
 sudo mv /etc/squid/squid.conf /etc/squid/squid.conf.backup
 
-# Creamos un fichero nuevo vacío
-sudo nano /etc/squid/squid.conf
+# Clonamos el repositorio
+git clone https://github.com/rhythmcreative/squid.git
+
+# Entramos al archivo y movemos el squid
+cd squid && mv squid.conf /etc/squid/squid.conf
+
+cat /etc/squid/squid.conf
+
 ```
 
 ### 2. El archivo `squid.conf` para la Demo
@@ -66,7 +68,7 @@ http_access allow autenticados
 http_access deny all
 ```
 
-**Nota Importante:** Recuerda ajustar `acl red_local src 192.168.1.0/24` a la dirección IP de tu red local antes de la presentación si vas a usar esa regla.
+**Nota Importante:** Ajustar `acl red_local src 192.168.1.0/24` a la dirección IP de tu red local que tenga la maquina
 
 ## Puntos Clave para la Presentación (5 minutos)
 

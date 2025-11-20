@@ -70,6 +70,23 @@ http_access deny all
 
 **Nota Importante:** Ajustar `acl red_local src 192.168.1.0/24` a la dirección IP de tu red local que tenga la maquina
 
+Aqui para crear un usuario de autenticacion (1234)
+```conf
+sudo htpasswd -c /etc/squid/passwd alumno
+```
+ Esto crea las carpetas definidas en cache_dir
+ ```conf
+sudo squid -z
+```
+Luego iniciamos y probamos
+```conf
+sudo systemctl start squid
+sudo systemctl status squid
+```
+Para poder ver los logs en tiempo real
+```conf
+tail -f /var/log/squid/access.log
+```
 ## Prueba en tiempo real
 ```conf
 export http_proxy="http://alumno:1234@127.0.0.1:3128"

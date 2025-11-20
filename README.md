@@ -8,7 +8,7 @@ Instalaremos Squid y haremos una copia de seguridad del archivo de configuració
 
 ```bash
 sudo apt update
-sudo apt install squid apache2-utils git -y
+sudo apt install squid apache2-utils curl git -y
 
 # Detenemos el servicio para configurar
 sudo systemctl stop squid

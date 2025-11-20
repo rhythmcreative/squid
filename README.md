@@ -1,10 +1,10 @@
-#Presentación: Configuración de Proxy Squid en Ubuntu
+# Configuración de Proxy Squid en Ubuntu
 
-Este repositorio cómo configurar un proxy Squid en Ubuntu, cubriendo instalación, configuración básica, caché, autenticación y reglas de acceso (ACLs).
+Como configurar un proxy Squid en Ubuntu, cubriendo instalación, configuración básica, caché, autenticación y reglas de acceso (ACLs)
 
 ### 1. Instalación y Copia de Seguridad de Squid
 
-Instalaremos Squid y haremos una copia de seguridad del archivo de configuración original para trabajar con uno simplificado.
+Instalaremos Squid y haremos una copia de seguridad del archivo de configuración original para trabajar con uno simplificado
 
 ```bash
 sudo apt update

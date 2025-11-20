@@ -70,6 +70,20 @@ http_access deny all
 
 **Nota Importante:** Ajustar `acl red_local src 192.168.1.0/24` a la dirección IP de tu red local que tenga la maquina
 
+## Prueba en tiempo real
+```conf
+export http_proxy="http://alumno:1234@127.0.0.1:3128"
+```
+## Para hacer comprobacion de que la pagina se ha bloqueado
+```
+curl -I https://www.facebook.com
+```
+Esto deberia de dar forbiden
+```
+curl -I https://www.wikipedia.com
+```
+Y esta si que deberia funcionar sin problemas
+
 ## Puntos Clave para la Presentación (5 minutos)
 
 Durante tu presentación, enfócate en explicar cada sección de `squid.conf` de manera concisa:
